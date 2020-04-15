@@ -6,15 +6,15 @@ import { slugify } from "../utils/utilityFunctions"
 const PostPreview = ({
   title,
   author,
-  path,
   date,
   body,
+  slug,
   thumbnailImage,
   tags,
   fluid,
 }) => {
   console.log(tags)
-
+  const path = "/path-was-deleted"
   return (
     <div className="col-sm-6">
       <div className="card">
@@ -42,7 +42,7 @@ const PostPreview = ({
                 )
               })}
             </div>
-            <Link to={path} className="btn btn-primary float-right">
+            <Link to={slug} className="btn btn-primary float-right">
               Go to this post
             </Link>
           </div>

@@ -26,33 +26,11 @@ const Layout = ({ children }) => {
       }
     }
   `)*/
-  const indexQuery = graphql`
+  const layoutQuery = graphql`
     query {
       site {
         siteMetadata {
           title
-        }
-      }
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              date
-              author
-              path
-              tags
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-            excerpt
-          }
         }
       }
     }
@@ -61,38 +39,15 @@ const Layout = ({ children }) => {
   return (
     <>
       <StaticQuery
-        query={indexQuery}
+        query={layoutQuery}
         render={data => {
           return <NavBar siteTitle={data.site.siteMetadata.title}></NavBar>
         }}
       />
 
       <div className="container">
-        {/* <main>{children}</main> */}
-        <StaticQuery
-          query={indexQuery}
-          render={data => {
-            //console.log(data)
-            return (
-              <div className="row">
-                {data.allMarkdownRemark.edges.map(({ node }) => {
-                  return (
-                    <PostPreview
-                      key={node.id}
-                      title={node.frontmatter.title}
-                      date={node.frontmatter.date}
-                      author={node.frontmatter.author}
-                      path={node.frontmatter.path}
-                      body={node.excerpt}
-                      tags={node.frontmatter.tags}
-                      fluid={node.frontmatter.image.childImageSharp.fluid}
-                    />
-                  )
-                })}
-              </div>
-            )
-          }}
-        />
+        <main>{children}</main>
+
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

@@ -1,5 +1,4 @@
 ---
-path: "/second-post"
 title: "Second  post by RAGAdox"
 date: "2020-04-15 14:19:00"
 author: "RAGAdox"

@@ -1,5 +1,4 @@
 ---
-path: "/third-post"
 title: "We are going to improve the UI"
 date: "2020-04-15 21:10:00"
 author: "RAGAdox"
@@ -14,3 +13,4 @@ Gatsby is working like magic
 Lol No it's a JS library ,and Js is ment to be awsome
 
 -hope you are enjoying this shit
+some changes 
