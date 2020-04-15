@@ -1,5 +1,4 @@
 ---
-path: "\forth-post"
 title: "JavaScript Rocks "
 author: "Rishi Mukherjee "
 date: "2020-04-15 21:12:00"
