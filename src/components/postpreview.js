@@ -16,8 +16,8 @@ const PostPreview = ({
   console.log(tags)
   const path = "/path-was-deleted"
   return (
-    <div className="col-sm-6">
-      <div className="card">
+    <div className="col-sm-6 mb-5" to={slug}>
+      <div className="card h-100 card-shadow p-3 mb-5" onmouseover="mouseEffect(this)">
         <Img className="card-img-top" fluid={fluid} />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
@@ -28,7 +28,7 @@ const PostPreview = ({
             <span>{thumbnailImage}</span>
           </p>
           <p className="card-text">{body}</p>
-          <div className="card-body">
+          <div>
             <div className="col-sm-6 float-left">
               {tags.map(tag => {
                 return (
@@ -42,7 +42,7 @@ const PostPreview = ({
                 )
               })}
             </div>
-            <Link to={slug} className="btn btn-primary float-right">
+            <Link to={slug} className="btn btn-primary float-right col-sm-6">
               Go to this post
             </Link>
           </div>

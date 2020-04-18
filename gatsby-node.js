@@ -4,7 +4,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    console.log(`Node:${JSON.stringify(node, null, 2)}`)
     createNodeField({
       node,
       name: "slug",

@@ -27,7 +27,7 @@ const indexQuery = graphql`
             tags
             image {
               childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 600, maxHeight: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }
