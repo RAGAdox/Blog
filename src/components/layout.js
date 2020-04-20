@@ -13,25 +13,20 @@ import { useStaticQuery, withPrefix, graphql, StaticQuery } from "gatsby"
 import Header from "./header"
 import NavBar from "./navbar"
 import PostPreview from "./postpreview"
+import Search from "./search"
 import "./layout.scss"
 import "../css/bootstrap.min.css"
 
 const Layout = ({ children }) => {
-  /*const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)*/
   const layoutQuery = graphql`
     query {
       site {
         siteMetadata {
           title
         }
+      }
+      siteSearchIndex {
+        index
       }
     }
   `
@@ -41,7 +36,12 @@ const Layout = ({ children }) => {
       <StaticQuery
         query={layoutQuery}
         render={data => {
-          return <NavBar siteTitle={data.site.siteMetadata.title}></NavBar>
+          return (
+            <>
+              <NavBar siteTitle={data.site.siteMetadata.title}></NavBar>
+              <search indexData={data.siteSearchIndex.index}></search>
+            </>
+          )
         }}
       />
 

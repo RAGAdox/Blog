@@ -5,30 +5,33 @@ import Layout from "../components/layout"
 import Helmet from "react-helmet"
 import SEO from "../components/seo"
 import Quote from "../components/markdownComponents/quote"
-
+import Image from "../components/markdownComponents/image"
 import { graphql } from "gatsby"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { quote: Quote },
+  components: { quote: Quote, pic: Image },
 }).Compiler
-function webShare() {
+function webShare(post) {
   const url = window.document.location.href
+  const shareObject = {
+    title: post.title,
+    text: "Check out this post ",
+    url: window.document.location.href,
+  }
   if (navigator.share) {
     navigator
-      .share({
-        title: "web.dev",
-        text: "Check out web.dev.",
-        url: "https://web.dev/",
-      })
+      .share(shareObject)
       .then(() => console.log("Successful share"))
       .catch(error => console.log("Error sharing", error))
   } else {
-    console.log("in loptop ")
+    console.log("in loptop ", shareObject)
   }
 }
 const SinglePost = ({ data }) => {
   const post = data.markdownRemark.frontmatter
+  console.log("data from post query ", data)
+
   return (
     <Layout>
       <SEO title={post.title}></SEO>
@@ -39,11 +42,12 @@ const SinglePost = ({ data }) => {
         <div className="card card-post col-sm-12">
           <Img fluid={post.image.childImageSharp.fluid} />
           {renderAst(data.markdownRemark.htmlAst)}
-          <div class="card-text">
-            {navigator.share ? "Enabled" : "disabled"}
+          <div class="card-footer card-text">
+            <p className="d-inline">Share this article </p>
             <img
+              className="d-inline"
               src="https://img.icons8.com/android/24/000000/share.png"
-              onClick={webShare}
+              onClick={post => webShare(post)}
             />
           </div>
         </div>

@@ -9,7 +9,6 @@ const Quote = props => {
     float: props.float ? props.float : "none",
     display: props.display ? props.display : "block",
   }
-  console.log(data.text)
 
   if (data.text != null)
     return (

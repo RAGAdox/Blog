@@ -68,5 +68,3 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 # My files to exclude 
-src/pages/posts/
-src/images/

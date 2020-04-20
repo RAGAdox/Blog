@@ -10,10 +10,20 @@
 .card-post {
   padding: 1rem;
 }
+.card-body {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
 .card-quote {
   border-radius: 1rem !important;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+.card-footer {
+  display: inline;
+}
+.image {
+  margin: 0.5rem;
 }
 // html {
 //   font-family: sans-serif;

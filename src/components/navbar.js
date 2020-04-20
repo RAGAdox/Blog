@@ -40,10 +40,21 @@ const NavBar = ({ siteTitle }) => (
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Sample Post
+            <Link className="nav-link" to="/blogList">
+              All Blogs
             </Link>
           </li>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
           <li className="nav-item">
             <Link className="nav-link" to="/contact">
               Contact

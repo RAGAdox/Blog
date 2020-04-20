@@ -8,4 +8,7 @@ const slugify = function(text) {
     .replace(/^-+/, "") // Trim - from start of text
     .replace(/-+$/, "") // Trim - from end of text
 }
+const searchByTag = function (key) {
+  
+}
 module.exports = { slugify }
