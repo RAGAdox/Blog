@@ -2,7 +2,7 @@
 title: "To Check what happens now"
 date: "2020-04-16 03:49:00"
 author: "RAGAdox"
-image: "../../images/gatsby-astronaut.png"
+thumbnailImage: "gatsby-astronaut.png"
 tags:
     - Javascript
 ---

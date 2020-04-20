@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 import { slugify } from "../utils/utilityFunctions"
+import Image from "./markdownComponents/image"
 //import { } from 'reactstrap'
 const PostPreview = ({
   title,
@@ -11,7 +11,7 @@ const PostPreview = ({
   slug,
   thumbnailImage,
   tags,
-  fluid,
+  // fluid,
 }) => {
   console.log(tags)
   const path = "/path-was-deleted"
@@ -21,7 +21,8 @@ const PostPreview = ({
         className="card h-100 card-shadow p-3 mb-5"
         onmouseover="mouseEffect(this)"
       >
-        <Img className="card-img-top" fluid={fluid} />
+        {/* <Img className="card-img-top" fluid={fluid} /> */}
+        <Image name={thumbnailImage} thumbnail={true} />
         <div className="card-body card-body-post-preview">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">

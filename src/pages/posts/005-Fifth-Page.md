@@ -2,7 +2,7 @@
 author: "Rishi Mukherjee"
 title: "My Own Remarks "
 date: "2020-04-15 21:18:23 "
-image: "../../images/gatsby-astronaut.png"
+thumbnailImage: "gatsby-astronaut.png"
 tags: 
     - remarks
     - UI 

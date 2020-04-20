@@ -2,7 +2,7 @@
 title: "Checking out gatsby-remark-images "
 author: "Rishi Mukherjee "
 date: "2020-04-18 03:09:00"
-image: "../../images/gatsby-astronaut.png"
+thumbnailImage: "gatsby-astronaut.png"
 tags:
     - Environment
     - Code

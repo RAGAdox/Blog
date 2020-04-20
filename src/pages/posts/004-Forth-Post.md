@@ -2,7 +2,7 @@
 title: "JavaScript Rocks "
 author: "Rishi Mukherjee "
 date: "2020-04-15 21:12:00"
-image: "../../images/gatsby-astronaut.png"
+thumbnailImage: "gatsby-astronaut.png"
 tags:
     - Environment
     - Code

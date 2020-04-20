@@ -2,7 +2,7 @@
 title: "ToDo List"
 author: "Rishi Mukherjee "
 date: "2020-04-18 03:09:00"
-image: "../../images/plant.jpeg"
+thumbnailImage: "plant.jpeg"
 tags:
     - Environment
     - Code

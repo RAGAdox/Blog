@@ -40,7 +40,8 @@ const SinglePost = ({ data }) => {
       <div className="row ">
         {/* <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} /> */}
         <div className="card card-post col-sm-12">
-          <Img fluid={post.image.childImageSharp.fluid} />
+          {/* <Img fluid={post.image.childImageSharp.fluid} /> */}
+          <Image name={post.thumbnailImage} />
           {renderAst(data.markdownRemark.htmlAst)}
           <div class="card-footer card-text">
             <p className="d-inline">Share this article </p>
@@ -68,13 +69,7 @@ export const postQuery = graphql`
         author
         date
         tags
-        image {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        thumbnailImage
       }
     }
   }

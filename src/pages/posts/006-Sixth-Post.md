@@ -2,7 +2,7 @@
 title: "We are going to improve the UI of our app"
 date: "2020-04-16 02:10:00"
 author: "RAGAdox"
-image: "../../images/gatsby-icon.png"
+thumbnailImage: "gatsby-icon.png"
 tags:
     - Javascript
     - js

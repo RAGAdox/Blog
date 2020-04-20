@@ -18,13 +18,7 @@ const indexQuery = graphql`
             date
             author
             tags
-            image {
-              childImageSharp {
-                fluid(maxWidth: 600, maxHeight: 600) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            thumbnailImage
           }
           excerpt
         }
@@ -50,7 +44,7 @@ const blogList = () => (
                   body={node.excerpt}
                   slug={node.fields.slug}
                   tags={node.frontmatter.tags}
-                  fluid={node.frontmatter.image.childImageSharp.fluid}
+                  thumbnailImage={node.frontmatter.thumbnailImage}
                 />
               )
             })}
