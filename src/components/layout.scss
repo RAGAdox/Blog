@@ -25,6 +25,50 @@
 .image {
   margin: 0.5rem;
 }
+.search-span {
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  left: 0px;
+  right: auto;
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.search-result-box {
+  //position: absolute;
+  //top: 100%;
+  //left: 0;
+  //z-index: 1000;
+  //float: left;
+  //min-width: 13rem;
+  //padding: 0.5rem 0;
+  //margin: 0.125rem 0 0;
+  //font-size: 1rem;
+  //color: #212529;
+  //text-align: left;
+  //list-style: none;
+  padding-top: 1rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+.search-result-item {
+  align-items: center;
+  vertical-align: middle;
+  //width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  //clear: both;
+  //font-weight: 400;
+  //color: #212529;
+  //white-space: nowrap;
+  //background-color: transparent;
+  //border: 1px solid rgba(0, 0, 0, 0.15);
+  //border-radius: 0.25rem;
+}
 // html {
 //   font-family: sans-serif;
 //   -ms-text-size-adjust: 100%;

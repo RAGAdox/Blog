@@ -13,15 +13,9 @@ const PostPreview = ({
   tags,
   // fluid,
 }) => {
-  console.log(tags)
-  const path = "/path-was-deleted"
   return (
     <div className="col-sm-6 mb-5" to={slug}>
-      <div
-        className="card h-100 card-shadow p-3 mb-5"
-        onmouseover="mouseEffect(this)"
-      >
-        {/* <Img className="card-img-top" fluid={fluid} /> */}
+      <div className="card h-100 card-shadow p-3 mb-5">
         <Image name={thumbnailImage} thumbnail={true} />
         <div className="card-body card-body-post-preview">
           <h5 className="card-title">{title}</h5>

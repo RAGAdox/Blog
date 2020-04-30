@@ -9,7 +9,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import PropTypes, { node } from "prop-types"
 import { useStaticQuery, withPrefix, graphql, StaticQuery } from "gatsby"
-
+import { transformData } from "../utils/utilityFunctions"
 import Header from "./header"
 import NavBar from "./navbar"
 import PostPreview from "./postpreview"
@@ -25,8 +25,19 @@ const Layout = ({ children }) => {
           title
         }
       }
-      siteSearchIndex {
-        index
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              tags
+              title
+              author
+            }
+            fields {
+              slug
+            }
+          }
+        }
       }
     }
   `
@@ -38,8 +49,10 @@ const Layout = ({ children }) => {
         render={data => {
           return (
             <>
-              <NavBar siteTitle={data.site.siteMetadata.title}></NavBar>
-              <search indexData={data.siteSearchIndex.index}></search>
+              <NavBar
+                siteTitle={data.site.siteMetadata.title}
+                searchData={data.allMarkdownRemark.edges}
+              ></NavBar>
             </>
           )
         }}

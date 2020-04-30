@@ -30,15 +30,6 @@ const Image = props => {
       propClass: props.className ? props.className : "",
     }
     let fluidData = null
-    // data.allFile.edges.forEach(element => {
-    //   if (element.node.relativePath === props.name) {
-    //     if (props.thumbnail)
-    //       fluidData = element.node.childImageSharp.thumbnail.fluid
-    //     else fluidData = element.node.childImageSharp.fluid
-    //   }
-    // })
-    console.log("data edges", data.allFile.edges)
-
     const dataEdges = data.allFile.edges
     for (var i = 0; i < dataEdges.length; i++) {
       if (dataEdges[i].node.relativePath === props.name) {
@@ -48,16 +39,8 @@ const Image = props => {
         break
       }
     }
-    console.log("fluidData", fluidData)
-
     if (fluidData != null) {
-      return (
-        <Img
-          fluid={fluidData}
-          className="card-img-top"
-          //className={`${style.propClass} col-sm-${style.colValue} d-${style.display} float-${style.float} image`}
-        />
-      )
+      return <Img fluid={fluidData} className="card-img-top" />
     } else return <p>Image Not Found</p>
   } else {
     return <></>

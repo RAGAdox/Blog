@@ -1,8 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
-const NavBar = ({ siteTitle }) => (
+import Search from "./search"
+const NavBar = ({ siteTitle, searchData }) => (
   <nav
     className="navbar navbar-expand-lg navbar-light "
     id="mainNav"
@@ -44,22 +44,12 @@ const NavBar = ({ siteTitle }) => (
               All Blogs
             </Link>
           </li>
-          <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
           <li className="nav-item">
             <Link className="nav-link" to="/contact">
               Contact
             </Link>
           </li>
+          <Search data={searchData}></Search>
         </ul>
       </div>
     </div>

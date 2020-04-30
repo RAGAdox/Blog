@@ -58,7 +58,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
+    /*{
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
         // Fields to index
@@ -75,7 +75,7 @@ module.exports = {
         // Optional filter to limit indexed nodes
         filter: (node, getNode) => node.frontmatter.tags !== "exempt",
       },
-    },
+    },*/
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
