@@ -36,7 +36,7 @@ const PostPreview = ({
                 <Link
                   key={tag}
                   className="badge badge-primary"
-                  to={`/tag/${slugify(tag)}`}
+                  to={`/blogList?tag=${tag.replace(" ", "%20").toLowerCase()}`}
                 >
                   {tag}
                 </Link>
