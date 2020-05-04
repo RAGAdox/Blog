@@ -37,37 +37,38 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
 
-    <div className="row d-flex justify-content-center">
-      <h2>Latest Posts :-</h2>
-      <StaticQuery
-        query={indexQuery}
-        render={data => {
-          //console.log(data)
+    <h2>Latest Posts :-</h2>
 
-          return (
-            <div className="row">
-              {data.allMarkdownRemark.edges.slice(0, 3).map(({ node }) => {
-                return (
-                  <PostPreview
-                    key={node.id}
-                    title={node.frontmatter.title}
-                    date={node.frontmatter.date}
-                    author={node.frontmatter.author}
-                    body={node.excerpt}
-                    slug={node.fields.slug}
-                    tags={node.frontmatter.tags}
-                    thumbnailImage={node.frontmatter.thumbnailImage}
-                    // fluid={node.frontmatter.image.childImageSharp.fluid}
-                  />
-                )
-              })}
-            </div>
-          )
-        }}
-      />
-      <p>Load More</p>
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <StaticQuery
+      query={indexQuery}
+      render={data => {
+        //console.log(data)
+
+        return (
+          <div className="row">
+            {data.allMarkdownRemark.edges.slice(0, 4).map(({ node }) => {
+              return (
+                <PostPreview
+                  key={node.id}
+                  title={node.frontmatter.title}
+                  date={node.frontmatter.date}
+                  author={node.frontmatter.author}
+                  body={node.excerpt}
+                  slug={node.fields.slug}
+                  tags={node.frontmatter.tags}
+                  thumbnailImage={node.frontmatter.thumbnailImage}
+                  // fluid={node.frontmatter.image.childImageSharp.fluid}
+                />
+              )
+            })}
+          </div>
+        )
+      }}
+    />
+
+    <Link to="/blogList">
+      <p className="row d-flex justify-content-center">Load More</p>
+    </Link>
   </Layout>
 )
 

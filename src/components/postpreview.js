@@ -16,21 +16,21 @@ const PostPreview = ({
   return (
     <div className="col-sm-6 mb-5" to={slug}>
       <div className="card h-100 card-shadow p-3 mb-5">
-        <Image name={thumbnailImage} thumbnail={true} />
+        {/* <Image name={thumbnailImage} thumbnail={true} /> */}
         <div className="card-body card-body-post-preview">
           <h5 className="card-title">{title}</h5>
-          <p className="card-text">
+          {/* <p className="card-text">
             Created By <span className="text-info">{author}</span> on{" "}
             <span className="text-info"> {date}</span>
             <br />
             <span>{thumbnailImage}</span>
-          </p>
+          </p> */}
         </div>
         <div className="card-body">
           <p className="card-text">{body}</p>
         </div>
         <div className="card-body">
-          <div className="col-sm-6 float-left">
+          <div className="col-sm-6 float-left badge-group">
             {tags.map(tag => {
               return (
                 <Link

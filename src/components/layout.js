@@ -16,6 +16,7 @@ import PostPreview from "./postpreview"
 import Search from "./search"
 import "./layout.scss"
 import "../css/bootstrap.min.css"
+import Login from "./login_test"
 
 const Layout = ({ children }) => {
   const layoutQuery = graphql`
@@ -41,9 +42,13 @@ const Layout = ({ children }) => {
       }
     }
   `
-
+  let show = children[0].props.title == "Home" ? "show" : ""
   return (
     <>
+      <Helmet>
+        <body className="body"></body>
+      </Helmet>
+
       <StaticQuery
         query={layoutQuery}
         render={data => {
@@ -57,14 +62,33 @@ const Layout = ({ children }) => {
           )
         }}
       />
+      <section className={"home " + show}>
+        <div className="container">
+          <Login></Login>
+          <div className="row">
+            <div className="col-sm" style={{ top: "20vh" }}>
+              <h3>Introducing</h3>
+              <h1 className="d-flex justify-content-center">TechieBloger</h1>
+            </div>
 
+            <div className="col-sm" style={{ top: "30vh" }}>
+              <h3 className="d-flex justify-content-start">Exploring Ideas</h3>
+              <h3 className="d-flex justify-content-center">
+                Following Passion
+              </h3>
+              <h3 className="d-flex justify-content-end">Sharing Knowledge</h3>
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="container">
+        {console.log("children", children[0].props.title)}
         <main>{children}</main>
 
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          RAGAdox
         </footer>
       </div>
       <Helmet>

@@ -1,5 +1,41 @@
+.body {
+  // background-color: rgb(88, 112, 248);
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from(#6900d1),
+      to(#8500a6)
+    )
+    fixed;
+  color: white !important;
+  overflow-x: hidden;
+}
+.home {
+  height: 100vh;
+  display: none;
+}
+nav {
+  a {
+    color: white !important;
+  }
+}
+.tab {
+  padding-left: 5rem;
+}
+.badge-group {
+  padding-left: 0rem !important;
+  padding-bottom: 1rem !important;
+}
 .badge {
   margin-left: 0.2em;
+}
+.card {
+  background-color: rgba(0, 0, 0, 0.38) !important;
+}
+.card-top {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 .card-shadow {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
@@ -68,6 +104,12 @@
   //background-color: transparent;
   //border: 1px solid rgba(0, 0, 0, 0.15);
   //border-radius: 0.25rem;
+}
+
+@media (max-width: 576px) {
+  .tag {
+    padding-left: 1em;
+  }
 }
 // html {
 //   font-family: sans-serif;
@@ -690,8 +732,8 @@
 // pre tt:after {
 //   content: "";
 // }
-// @media only screen and (max-width: 480px) {
-//   html {
-//     font-size: 100%;
-//   }
-// }
+@media only screen and (max-width: 480px) {
+  .tab {
+    padding-left: 1rem !important;
+  }
+}

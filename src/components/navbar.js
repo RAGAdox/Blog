@@ -4,7 +4,7 @@ import React from "react"
 import Search from "./search"
 const NavBar = ({ siteTitle, searchData }) => (
   <nav
-    className="navbar navbar-expand-lg navbar-light "
+    className="navbar navbar-expand-lg  navbar-fixed-top"
     id="mainNav"
     style={{
       paddingBottom1: `1.45rem`,

@@ -35,22 +35,24 @@ const SinglePost = ({ data }) => {
   return (
     <Layout>
       <SEO title={post.title}></SEO>
-      <h1>{post.title}</h1>
+      {/* <h1>{post.title}</h1> */}
 
       <div className="row ">
         {/* <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} /> */}
         <div className="card card-post col-sm-12">
           {/* <Img fluid={post.image.childImageSharp.fluid} /> */}
-          <Image name={post.thumbnailImage} />
-          {renderAst(data.markdownRemark.htmlAst)}
-          <div class="card-footer card-text">
-            <p className="d-inline">Share this article </p>
-            <img
-              className="d-inline"
-              src="https://img.icons8.com/android/24/000000/share.png"
-              onClick={post => webShare(post)}
-            />
+          <div className="card-top">
+            <h1 className="card-title">{post.title}</h1>
+            <Image name={post.thumbnailImage} />
           </div>
+          {renderAst(data.markdownRemark.htmlAst)}
+        </div>
+        <div class="">
+          <img
+            className="d-inline"
+            src="https://img.icons8.com/android/24/000000/share.png"
+            onClick={post => webShare(post)}
+          />
         </div>
       </div>
     </Layout>

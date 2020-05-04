@@ -9,9 +9,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
+    "dotenv": "^8.2.0",
+    "firebase": "^7.14.2",
+    "firebaseui": "^4.5.0",
     "fuse.js": "^5.2.3",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
+    "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.2",
@@ -26,6 +30,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-firebaseui": "^4.1.0",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
@@ -41,13 +46,13 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 192.168.137.1 -p 8000",
+    "develop": "gatsby clean && gatsby develop -H 192.168.137.1 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby clean && gatsby build && gh-pages -d public"
   },
   "repository": {
     "type": "git",
