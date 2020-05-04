@@ -1,0 +1,8 @@
+<svg class="Rectangle_28_k">
+		<linearGradient id="Rectangle_28_k" spreadMethod="pad" x1="0" x2="1" y1="0" y2="1">
+			<stop offset="0" stop-color="#6900d1" stop-opacity="1"></stop>
+			<stop offset="1" stop-color="#8500a6" stop-opacity="1"></stop>
+		</linearGradient>
+		<rect fill="url(#Rectangle_28_k)" id="Rectangle_28_k" rx="0" ry="0" x="0" y="0" width="1920" height="1080">
+		</rect>
+	</svg>
