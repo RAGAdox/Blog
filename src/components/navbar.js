@@ -45,7 +45,7 @@ const NavBar = ({ siteTitle, searchData }) => (
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/contact">
+            <Link className="nav-link" to="/page-2">
               Contact
             </Link>
           </li>

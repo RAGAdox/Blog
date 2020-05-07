@@ -16,7 +16,7 @@ import PostPreview from "./postpreview"
 import Search from "./search"
 import "./layout.scss"
 import "../css/bootstrap.min.css"
-import Login from "./login_test"
+//import Login from "./login_test"
 
 const Layout = ({ children }) => {
   const layoutQuery = graphql`
@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
       />
       <section className={"home " + show}>
         <div className="container">
-          <Login></Login>
+          {/* <Login></Login> */}
           <div className="row">
             <div className="col-sm" style={{ top: "20vh" }}>
               <h3>Introducing</h3>

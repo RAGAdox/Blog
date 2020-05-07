@@ -1,8 +1,6 @@
 import React from "react"
 import rehypeReact from "rehype-react"
-import Img from "gatsby-image"
 import Layout from "../components/layout"
-import Helmet from "react-helmet"
 import SEO from "../components/seo"
 import Quote from "../components/markdownComponents/quote"
 import Image from "../components/markdownComponents/image"
@@ -47,7 +45,7 @@ const SinglePost = ({ data }) => {
           </div>
           {renderAst(data.markdownRemark.htmlAst)}
         </div>
-        <div class="">
+        <div>
           <img
             className="d-inline"
             src="https://img.icons8.com/android/24/000000/share.png"

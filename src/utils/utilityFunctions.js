@@ -30,7 +30,7 @@ const slugify = function(text) {
     .replace(/-+$/, "") // Trim - from end of text
 }
 const transformData = function(data) {
-  let searchData = new Object()
+  let searchData = {}
   data.forEach(element => {
     element.node.frontmatter.tags.forEach(tag => {
       tag = tag.toLowerCase()
@@ -43,7 +43,7 @@ const transformData = function(data) {
       .toLowerCase()
       .split(" ")
       .forEach(word => {
-        if (!commonWords.includes(word) && word != "") {
+        if (!commonWords.includes(word) && word !== "") {
           if (searchData[word] == null) searchData[word] = [element.node]
           else searchData[word].push(element.node)
         }
@@ -51,5 +51,4 @@ const transformData = function(data) {
   })
   return searchData
 }
-const searchByTag = function(key) {}
 module.exports = { slugify, transformData }
