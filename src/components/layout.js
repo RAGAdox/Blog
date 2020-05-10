@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect, useContext } from "react"
 import Helmet from "react-helmet"
 import PropTypes, { node } from "prop-types"
 import { useStaticQuery, withPrefix, graphql, StaticQuery } from "gatsby"
@@ -16,9 +16,11 @@ import PostPreview from "./postpreview"
 import Search from "./search"
 import "./layout.scss"
 import "../css/bootstrap.min.css"
-//import Login from "./login_test"
+import { fireAuth } from "../config/firebase"
+import { GlobalDispatchContext } from "../context/GlobalContextProvider"
 
 const Layout = ({ children }) => {
+  const globalDispatch = useContext(GlobalDispatchContext)
   const layoutQuery = graphql`
     query {
       site {
@@ -42,6 +44,21 @@ const Layout = ({ children }) => {
       }
     }
   `
+  useEffect(() => {
+    fireAuth.onAuthStateChanged(user => {
+      console.log("onAuthStateChanged called from Layout")
+      globalDispatch({
+        type: "USER_SIGN_IN",
+        payload: !!user
+          ? {
+              isSignedIn: !!user,
+              displayName: user.displayName,
+              photoUrl: user.photoURL,
+            }
+          : { isSignedIn: false },
+      })
+    })
+  }, [])
   let show = children[0].props.title == "Home" ? "show" : ""
   return (
     <>

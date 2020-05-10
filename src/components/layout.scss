@@ -11,12 +11,17 @@
   color: white !important;
   overflow-x: hidden;
 }
+.search-span,
+.modal {
+  color: #6900d1 !important;
+}
 .home {
   height: 100vh;
   display: none;
 }
 nav {
-  a {
+  .nav-link,
+  .navbar-brand {
     color: white !important;
   }
 }

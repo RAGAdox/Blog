@@ -15,6 +15,6 @@ const config = {
 export const myFirebase =
   typeof window !== "undefined" ? firebase.initializeApp(config) : null
 export const firebaseAuthProvider =
-         typeof window !== "undefined" ? firebase.auth : null
+  typeof window !== "undefined" ? firebase.auth : null
 export const db = typeof window !== "undefined" ? myFirebase.firestore() : null
 export const fireAuth = typeof window !== "undefined" ? myFirebase.auth() : null
