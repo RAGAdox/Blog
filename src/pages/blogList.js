@@ -27,7 +27,7 @@ const indexQuery = graphql`
   }
 `
 
-const blogList = props => {
+const bloglist = props => {
   console.log(props.location.search)
   let match
   let p1 = /\+/g
@@ -81,4 +81,4 @@ const blogList = props => {
   )
 }
 
-export default blogList
+export default bloglist

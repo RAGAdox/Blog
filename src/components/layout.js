@@ -15,7 +15,8 @@ import NavBar from "./navbar"
 import PostPreview from "./postpreview"
 import Search from "./search"
 import "./layout.scss"
-import "../css/bootstrap.min.css"
+//import "../css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import { fireAuth } from "../config/firebase"
 import { GlobalDispatchContext } from "../context/GlobalContextProvider"
 
@@ -108,7 +109,7 @@ const Layout = ({ children }) => {
           RAGAdox
         </footer>
       </div>
-      <Helmet>
+      {/* <Helmet>
         <script
           src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
           integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -125,8 +126,8 @@ const Layout = ({ children }) => {
           crossorigin="anonymous"
         ></script>
         <script src={withPrefix("script.js")} type="text/javascript" />
-        {/*<script src={withPrefix("bootstrap.min.js")} type="text/javascript" /> */}
-      </Helmet>
+        {/*<script src={withPrefix("bootstrap.min.js")} type="text/javascript" /> }
+      </Helmet> */}
     </>
   )
 }
